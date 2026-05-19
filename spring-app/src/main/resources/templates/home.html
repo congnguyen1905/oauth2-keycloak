@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>OAuth2 Demo</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e0e0e0;
+        }
+        .container {
+            text-align: center;
+            padding: 60px 40px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            max-width: 600px;
+            width: 90%;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(99, 179, 237, 0.2);
+            border: 1px solid rgba(99, 179, 237, 0.4);
+            color: #63b3ed;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        h1 { font-size: 2.5rem; font-weight: 700; margin-bottom: 12px; color: #fff; }
+        .subtitle { color: #a0aec0; margin-bottom: 40px; font-size: 1.1rem; }
+        .btn-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn {
+            padding: 14px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.2s;
+            display: inline-block;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(102, 126, 234, 0.5); }
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: #e0e0e0;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .btn-secondary:hover { background: rgba(255,255,255,0.15); }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 40px;
+            text-align: left;
+        }
+        .info-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 10px;
+            padding: 16px;
+        }
+        .info-card .label { font-size: 11px; color: #718096; text-transform: uppercase; letter-spacing: 1px; }
+        .info-card .value { font-size: 14px; color: #e2e8f0; margin-top: 4px; font-family: monospace; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="badge">OAuth2 + Keycloak Demo</div>
+    <h1>🔐 Spring Boot</h1>
+    <p class="subtitle">OAuth2 Client &amp; Resource Server<br>powered by Keycloak</p>
+
+    <div class="btn-group">
+        <div sec:authorize="!isAuthenticated()">
+            <a href="/oauth2/authorization/keycloak" class="btn btn-primary">🚀 Đăng nhập với Keycloak</a>
+        </div>
+        <div sec:authorize="isAuthenticated()">
+            <a href="/dashboard" class="btn btn-primary">📊 Dashboard</a>
+            <a href="/logout" class="btn btn-secondary">Đăng xuất</a>
+        </div>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <div class="label">Auth Server</div>
+            <div class="value">localhost:8080</div>
+        </div>
+        <div class="info-card">
+            <div class="label">Realm</div>
+            <div class="value">demo-realm</div>
+        </div>
+        <div class="info-card">
+            <div class="label">Client ID</div>
+            <div class="value">spring-boot-app</div>
+        </div>
+        <div class="info-card">
+            <div class="label">Flow</div>
+            <div class="value">Authorization Code</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

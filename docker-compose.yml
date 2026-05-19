@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:22.0.5
+    container_name: keycloak
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_DB: dev-mem
+    command:
+      - start-dev
+      - --import-realm
+    volumes:
+      - ./keycloak-config/realm-export.json:/opt/keycloak/data/import/realm-export.json
+    ports:
+      - "8080:8080"
+    networks:
+      - oauth2-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/realms/master"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+networks:
+  oauth2-network:
+    driver: bridge
