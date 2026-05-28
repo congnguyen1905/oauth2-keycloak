@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"time"
+	"encoding/json"
 
 	"github.com/go-resty/resty/v2"
 	"auth-service/config"
@@ -60,7 +61,7 @@ func (s *AuthService) Login(ctx context.Context, req *models.LoginRequest) (*mod
 	
 	// Parse token response
 	var tokenResponse map[string]interface{}
-	if err := resp.Result(&tokenResponse); err != nil {
+	if err := json.Unmarshal(resp.Body(), &tokenResponse); err != nil {
 		return nil, fmt.Errorf("failed to parse token response")
 	}
 	

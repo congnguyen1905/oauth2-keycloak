@@ -6,12 +6,13 @@ WORKDIR /app
 RUN apk add --no-cache git
 
 # Copy go mod files
-COPY go.mod go.sum* ./
+COPY go.mod ./
 RUN go mod download || true
 
 # Copy source code
 COPY . .
 
+RUN go mod tidy
 # Build the application
 RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o auth-service .
 

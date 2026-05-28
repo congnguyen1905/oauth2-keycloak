@@ -4,6 +4,7 @@ const nextConfig = {
   env: {
     GATEWAY_URL: process.env.GATEWAY_URL || 'http://localhost:8888',
   },
+  output: 'standalone'
 };
 
 export default nextConfig;

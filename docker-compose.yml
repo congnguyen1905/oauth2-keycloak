@@ -8,6 +8,7 @@ services:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
       KC_DB: dev-mem
+      KC_HEALTH_ENABLED: "true"        # bật health endpoint
     command:
       - start-dev
       - --import-realm
@@ -18,10 +19,11 @@ services:
     networks:
       - oauth2-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/realms/master"]
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/localhost/8080 && echo -e 'GET /health/ready HTTP/1.1\r\nHost: localhost\r\nConnection: close\r\n\r\n' >&3 && cat <&3 | grep -q '\"status\": \"UP\"'"]
       interval: 30s
       timeout: 10s
       retries: 5
+      start_period: 60s   # quan trọng: cho KC đủ thời gian boot
 
   redis:
     image: redis:7-alpine

@@ -15,7 +15,7 @@ import java.io.IOException;
 public class KeycloakLogoutHandler implements LogoutSuccessHandler {
 
     private static final String KEYCLOAK_LOGOUT_URL =
-        "http://localhost:8080/realms/demo-realm/protocol/openid-connect/logout";
+        "http://keycloak:8080/realms/demo-realm/protocol/openid-connect/logout";
 
     @Override
     public void onLogoutSuccess(HttpServletRequest request,
@@ -23,7 +23,7 @@ public class KeycloakLogoutHandler implements LogoutSuccessHandler {
                                  Authentication authentication) throws IOException {
 
         String redirectUrl = KEYCLOAK_LOGOUT_URL
-            + "?post_logout_redirect_uri=http://localhost:8081/"
+            + "?post_logout_redirect_uri=http://host.docker.internal:8081/"
             + "&client_id=spring-boot-app";
 
         // Nếu có id_token, truyền theo để Keycloak biết ai đang logout
