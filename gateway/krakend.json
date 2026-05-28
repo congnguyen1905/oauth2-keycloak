@@ -1,0 +1,82 @@
+{
+  "version": 3,
+  "name": "OAuth2 Demo Gateway",
+  "port": 8080,
+  "host": "0.0.0.0",
+  "timeout": "30s",
+  "cache_ttl": "30s",
+  "output_encoding": "json",
+  "extra_config": {
+    "router": {
+      "return_error_msg": true
+    }
+  },
+  "endpoints": [
+    {
+      "endpoint": "/api/auth/login",
+      "method": "POST",
+      "backend": [
+        {
+          "url_pattern": "/auth/login",
+          "host": ["http://auth-service:8082"],
+          "encoding": "json"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/auth/logout",
+      "method": "POST",
+      "backend": [
+        {
+          "url_pattern": "/auth/logout",
+          "host": ["http://auth-service:8082"],
+          "encoding": "json"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/auth/validate",
+      "method": "POST",
+      "backend": [
+        {
+          "url_pattern": "/auth/validate",
+          "host": ["http://auth-service:8082"],
+          "encoding": "json"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/auth/session/{sessionID}",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/auth/session/{sessionID}",
+          "host": ["http://auth-service:8082"],
+          "encoding": "json"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/introspect",
+      "method": "POST",
+      "backend": [
+        {
+          "url_pattern": "/introspect",
+          "host": ["http://auth-service:8082"],
+          "encoding": "json"
+        }
+      ]
+    },
+    {
+      "endpoint": "/health",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/health",
+          "host": ["http://auth-service:8082"],
+          "encoding": "json"
+        }
+      ]
+    }
+  ]
+}
