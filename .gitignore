@@ -1,12 +1,42 @@
 ```
 # Dependencies
-node_modules/
+go.sum
+vendor/
+
+# Build artifacts
+bin/
+*.so
+*.exe
+*.dll
+*.dylib
+*.jar
+*.war
+*.class
+
+# Logs
+*.log
 
 # Environment
 .env
 .env.local
 .env.*
 
-# Logs
-*.log
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Coverage
+coverage/
+htmlcov/
+.coverage
+
+# Temporary files
+*.tmp
+*.temp
 ```
