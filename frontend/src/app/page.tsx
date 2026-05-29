@@ -79,8 +79,8 @@ export default function LoginPage() {
 
         <div className="mt-4 text-sm text-gray-600">
           <p>Demo credentials:</p>
-          <p>user / password</p>
-          <p>admin / admin</p>
+          <p>admin / admin123 (Administrator)</p>
+          <p>user / user123 (Regular user)</p>
         </div>
       </div>
     </div>
