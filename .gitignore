@@ -1,12 +1,18 @@
-```gitignore
+# Configuration files
+*.env
+*.env.local
+*.env.*
+
+# Logs
+*.log
+
 # Dependencies
 node_modules/
 
-# Build outputs
+# Build artifacts
 dist/
 build/
-.next/
-out/
+target/
 
 # Python
 __pycache__/
@@ -17,22 +23,30 @@ __pycache__/
 env/
 venv/
 .venv/
-.ENV
-.env
-.env.*
-.env.local
-
-# Logs
+.venv.bak/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
 *.log
-
-# OS generated files
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
+
+# Compiled files
+*.class
+*.o
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.a
+*.lib
 
 # IDE
 .vscode/
@@ -75,4 +89,3 @@ htmlcov/
 *.tar.bz2
 *.tar.xz
 *.tar.zst
-```
