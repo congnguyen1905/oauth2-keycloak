@@ -1,42 +1,60 @@
 ```
 # Dependencies
-go.sum
-vendor/
+node_modules/
 
-# Build artifacts
-bin/
-*.so
-*.exe
-*.dll
-*.dylib
-*.jar
-*.war
-*.class
+# Build outputs
+dist/
+build/
+.next/
+out/
 
-# Logs
-*.log
-
-# Environment
+# Environment variables
 .env
 .env.local
-.env.*
+*.env.*
 
-# Editors
+# IDE specific
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# OS
-.DS_Store
-Thumbs.db
-
-# Coverage
-coverage/
-htmlcov/
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
 .coverage
-
-# Temporary files
-*.tmp
-*.temp
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+.MF
+tags
+TAGS
+idtags
+GTAGS
+GRTAGS
+GSYMS
+GPATH
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 ```
