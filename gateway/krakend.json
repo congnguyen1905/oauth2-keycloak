@@ -11,7 +11,7 @@
       "return_error_msg": true
     },
     "security/cors": {
-      "allow_origins": ["http://localhost:3000"],
+      "allow_origins": ["http://localhost:3000", "http://localhost:3031", "http://127.0.0.1:3031"],
       "allow_methods": ["GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS"],
       "allow_headers": ["Origin", "Authorization", "Content-Type", "Accept"],
       "expose_headers": ["Content-Length", "Content-Type"],
@@ -83,6 +83,62 @@
           "url_pattern": "/health",
           "host": ["http://auth-service:8082"],
           "encoding": "json"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{rest}",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/inventory/{rest}",
+          "host": ["http://host.docker.internal:8001"],
+          "encoding": "json",
+          "headers": {
+            "X-Api-Version": ["1"]
+          }
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{rest}",
+      "method": "POST",
+      "backend": [
+        {
+          "url_pattern": "/inventory/{rest}",
+          "host": ["http://host.docker.internal:8001"],
+          "encoding": "json",
+          "headers": {
+            "X-Api-Version": ["1"]
+          }
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{rest}",
+      "method": "PUT",
+      "backend": [
+        {
+          "url_pattern": "/inventory/{rest}",
+          "host": ["http://host.docker.internal:8001"],
+          "encoding": "json",
+          "headers": {
+            "X-Api-Version": ["1"]
+          }
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{rest}",
+      "method": "DELETE",
+      "backend": [
+        {
+          "url_pattern": "/inventory/{rest}",
+          "host": ["http://host.docker.internal:8001"],
+          "encoding": "json",
+          "headers": {
+            "X-Api-Version": ["1"]
+          }
         }
       ]
     }
