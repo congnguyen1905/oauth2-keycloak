@@ -13,7 +13,14 @@
     "security/cors": {
       "allow_origins": ["http://localhost:3000", "http://localhost:3031", "http://127.0.0.1:3031"],
       "allow_methods": ["GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS"],
-      "allow_headers": ["Origin", "Authorization", "Content-Type", "Accept"],
+      "allow_headers": [
+        "Origin", "origin",
+        "Authorization", "authorization",
+        "Content-Type", "content-type",
+        "Accept", "accept",
+        "X-Api-Version", "x-api-version",
+        "X-Session-Id", "x-session-id"
+      ],
       "expose_headers": ["Content-Length", "Content-Type"],
       "allow_credentials": true,
       "max_age": "12h"
@@ -89,56 +96,56 @@
     {
       "endpoint": "/api/inventory/{rest}",
       "method": "GET",
+      "input_headers": [
+        "*"
+      ],
       "backend": [
         {
           "url_pattern": "/inventory/{rest}",
           "host": ["http://host.docker.internal:8001"],
-          "encoding": "json",
-          "headers": {
-            "X-Api-Version": ["1"]
-          }
+          "encoding": "json"
         }
       ]
     },
     {
       "endpoint": "/api/inventory/{rest}",
       "method": "POST",
+      "input_headers": [
+        "*"
+      ],
       "backend": [
         {
           "url_pattern": "/inventory/{rest}",
           "host": ["http://host.docker.internal:8001"],
-          "encoding": "json",
-          "headers": {
-            "X-Api-Version": ["1"]
-          }
+          "encoding": "json"
         }
       ]
     },
     {
       "endpoint": "/api/inventory/{rest}",
       "method": "PUT",
+      "input_headers": [
+        "*"
+      ],
       "backend": [
         {
           "url_pattern": "/inventory/{rest}",
           "host": ["http://host.docker.internal:8001"],
-          "encoding": "json",
-          "headers": {
-            "X-Api-Version": ["1"]
-          }
+          "encoding": "json"
         }
       ]
     },
     {
       "endpoint": "/api/inventory/{rest}",
       "method": "DELETE",
+      "input_headers": [
+        "*"
+      ],
       "backend": [
         {
           "url_pattern": "/inventory/{rest}",
           "host": ["http://host.docker.internal:8001"],
-          "encoding": "json",
-          "headers": {
-            "X-Api-Version": ["1"]
-          }
+          "encoding": "json"
         }
       ]
     }

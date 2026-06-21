@@ -7,13 +7,14 @@ services:
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
-      KC_DB: dev-mem
+      KC_DB: dev-file
       KC_HEALTH_ENABLED: "true"        # bật health endpoint
     command:
       - start-dev
       - --import-realm
     volumes:
-      - ./keycloak-config/realm-export.json:/opt/keycloak/data/import/realm-export.json
+      - ./keycloak-config/realm-export.json:/opt/keycloak/data/import/realm-export.json:ro
+      - keycloak_data:/opt/keycloak/data
     ports:
       - "8080:8080"
     networks:
@@ -115,3 +116,7 @@ services:
 networks:
   oauth2-network:
     driver: bridge
+
+volumes:
+  keycloak_data:
+    driver: local
