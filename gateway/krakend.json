@@ -11,141 +11,1684 @@
       "return_error_msg": true
     },
     "security/cors": {
-      "allow_origins": ["http://localhost:3000", "http://localhost:3031", "http://127.0.0.1:3031"],
-      "allow_methods": ["GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS"],
-      "allow_headers": [
-        "Origin", "origin",
-        "Authorization", "authorization",
-        "Content-Type", "content-type",
-        "Accept", "accept",
-        "X-Api-Version", "x-api-version",
-        "X-Session-Id", "x-session-id"
+      "allow_origins": [
+        "http://localhost:3000",
+        "http://localhost:3031",
+        "http://127.0.0.1:3031"
       ],
-      "expose_headers": ["Content-Length", "Content-Type"],
+      "allow_methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "allow_headers": [
+        "Origin",
+        "origin",
+        "Authorization",
+        "authorization",
+        "Content-Type",
+        "content-type",
+        "Accept",
+        "accept",
+        "X-Api-Version",
+        "x-api-version",
+        "X-Session-Id",
+        "x-session-id"
+      ],
+      "expose_headers": [
+        "Content-Length",
+        "Content-Type"
+      ],
       "allow_credentials": true,
       "max_age": "12h"
     }
   },
   "endpoints": [
     {
-      "endpoint": "/api/auth/login",
-      "method": "POST",
-      "backend": [
-        {
-          "url_pattern": "/auth/login",
-          "host": ["http://auth-service:8082"],
-          "encoding": "json"
-        }
-      ]
-    },
-    {
-      "endpoint": "/api/auth/logout",
-      "method": "POST",
-      "backend": [
-        {
-          "url_pattern": "/auth/logout",
-          "host": ["http://auth-service:8082"],
-          "encoding": "json"
-        }
-      ]
-    },
-    {
-      "endpoint": "/api/auth/validate",
-      "method": "POST",
-      "backend": [
-        {
-          "url_pattern": "/auth/validate",
-          "host": ["http://auth-service:8082"],
-          "encoding": "json"
-        }
-      ]
-    },
-    {
-      "endpoint": "/api/auth/session/{sessionID}",
-      "method": "GET",
-      "backend": [
-        {
-          "url_pattern": "/auth/session/{sessionID}",
-          "host": ["http://auth-service:8082"],
-          "encoding": "json"
-        }
-      ]
-    },
-    {
-      "endpoint": "/api/introspect",
-      "method": "POST",
-      "backend": [
-        {
-          "url_pattern": "/introspect",
-          "host": ["http://auth-service:8082"],
-          "encoding": "json"
-        }
-      ]
-    },
-    {
       "endpoint": "/health",
       "method": "GET",
       "backend": [
         {
           "url_pattern": "/health",
-          "host": ["http://auth-service:8082"],
+          "host": [
+            "http://auth-service:8082"
+          ],
           "encoding": "json"
         }
       ]
     },
     {
-      "endpoint": "/api/inventory/{rest}",
+      "endpoint": "/api/auth/{r1}",
       "method": "GET",
+      "output_encoding": "no-op",
       "input_headers": [
         "*"
       ],
       "backend": [
         {
-          "url_pattern": "/inventory/{rest}",
-          "host": ["http://host.docker.internal:8001"],
-          "encoding": "json"
+          "url_pattern": "/auth/{r1}",
+          "host": [
+            "http://auth-service:8082"
+          ],
+          "encoding": "no-op"
         }
       ]
     },
     {
-      "endpoint": "/api/inventory/{rest}",
+      "endpoint": "/api/auth/{r1}",
       "method": "POST",
+      "output_encoding": "no-op",
       "input_headers": [
         "*"
       ],
       "backend": [
         {
-          "url_pattern": "/inventory/{rest}",
-          "host": ["http://host.docker.internal:8001"],
-          "encoding": "json"
+          "url_pattern": "/auth/{r1}",
+          "host": [
+            "http://auth-service:8082"
+          ],
+          "encoding": "no-op"
         }
       ]
     },
     {
-      "endpoint": "/api/inventory/{rest}",
+      "endpoint": "/api/auth/{r1}",
       "method": "PUT",
+      "output_encoding": "no-op",
       "input_headers": [
         "*"
       ],
       "backend": [
         {
-          "url_pattern": "/inventory/{rest}",
-          "host": ["http://host.docker.internal:8001"],
-          "encoding": "json"
+          "url_pattern": "/auth/{r1}",
+          "host": [
+            "http://auth-service:8082"
+          ],
+          "encoding": "no-op"
         }
       ]
     },
     {
-      "endpoint": "/api/inventory/{rest}",
+      "endpoint": "/api/auth/{r1}",
       "method": "DELETE",
+      "output_encoding": "no-op",
       "input_headers": [
         "*"
       ],
       "backend": [
         {
-          "url_pattern": "/inventory/{rest}",
-          "host": ["http://host.docker.internal:8001"],
-          "encoding": "json"
+          "url_pattern": "/auth/{r1}",
+          "host": [
+            "http://auth-service:8082"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}",
+          "host": [
+            "http://auth-service:8082"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}",
+          "host": [
+            "http://auth-service:8082"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}",
+          "host": [
+            "http://auth-service:8082"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}",
+          "host": [
+            "http://auth-service:8082"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}/{r3}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}/{r3}",
+          "host": [
+            "http://auth-service:8082"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}/{r3}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}/{r3}",
+          "host": [
+            "http://auth-service:8082"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}/{r3}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}/{r3}",
+          "host": [
+            "http://auth-service:8082"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}/{r3}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}/{r3}",
+          "host": [
+            "http://auth-service:8082"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}/{r3}/{r4}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://auth-service:8082"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}/{r3}/{r4}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://auth-service:8082"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}/{r3}/{r4}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://auth-service:8082"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}/{r3}/{r4}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://auth-service:8082"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}/{r3}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}/{r3}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}/{r3}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}/{r3}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}/{r3}/{r4}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}/{r3}/{r4}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}/{r3}/{r4}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}/{r3}/{r4}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8085"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8085"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8085"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8085"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8085"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8085"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8085"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8085"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}/{r3}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8085"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}/{r3}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8085"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}/{r3}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8085"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}/{r3}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8085"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}/{r3}/{r4}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8085"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}/{r3}/{r4}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8085"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}/{r3}/{r4}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8085"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}/{r3}/{r4}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8085"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8084"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8084"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8084"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8084"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8084"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8084"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8084"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8084"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}/{r3}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8084"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}/{r3}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8084"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}/{r3}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8084"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}/{r3}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8084"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}/{r3}/{r4}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8084"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}/{r3}/{r4}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8084"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}/{r3}/{r4}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8084"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}/{r3}/{r4}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8084"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8086"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8086"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8086"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8086"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8086"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8086"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8086"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8086"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}/{r3}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8086"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}/{r3}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8086"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}/{r3}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8086"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}/{r3}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8086"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}/{r3}/{r4}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8086"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}/{r3}/{r4}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8086"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}/{r3}/{r4}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8086"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}/{r3}/{r4}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8086"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8087"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8087"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8087"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://host.docker.internal:8087"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8087"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8087"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8087"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://host.docker.internal:8087"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}/{r3}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8087"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}/{r3}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8087"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}/{r3}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8087"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}/{r3}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://host.docker.internal:8087"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}/{r3}/{r4}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8087"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}/{r3}/{r4}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8087"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}/{r3}/{r4}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8087"
+          ],
+          "encoding": "no-op"
+        }
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}/{r3}/{r4}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://host.docker.internal:8087"
+          ],
+          "encoding": "no-op"
         }
       ]
     }
