@@ -55,6 +55,10 @@
       {
         "name": "ROLE_ADMIN",
         "description": "Administrator role"
+      },
+      {
+        "name": "ROLE_MANAGER",
+        "description": "Manager role"
       }
     ]
   },

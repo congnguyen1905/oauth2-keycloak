@@ -81,14 +81,14 @@ services:
   #     retries: 5
 
   gateway:
-    image: devopsfaith/krakend:2.4
+    build:
+      context: ./gateway
+      dockerfile: Dockerfile
     container_name: gateway
-    volumes:
-      - ./gateway:/etc/krakend
     ports:
       - "8888:8888"
-    depends_on:
-      - auth-service
+    # depends_on:
+    #   - auth-service
     networks:
       - oauth2-network
     command: [ "run", "-c", "/etc/krakend/krakend.json" ]

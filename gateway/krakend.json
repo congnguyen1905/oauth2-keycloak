@@ -36,7 +36,10 @@
         "X-Api-Version",
         "x-api-version",
         "X-Session-Id",
-        "x-session-id"
+        "x-session-id",
+        "X-Tenant-Id",
+        "x-tenant-id",
+        "X-Tenant-ID"
       ],
       "expose_headers": [
         "Content-Length",
@@ -54,7 +57,7 @@
         {
           "url_pattern": "/health",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "json"
         }
@@ -71,7 +74,7 @@
         {
           "url_pattern": "/auth/{r1}",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "no-op"
         }
@@ -88,7 +91,7 @@
         {
           "url_pattern": "/auth/{r1}",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "no-op"
         }
@@ -105,7 +108,7 @@
         {
           "url_pattern": "/auth/{r1}",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "no-op"
         }
@@ -122,7 +125,7 @@
         {
           "url_pattern": "/auth/{r1}",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "no-op"
         }
@@ -139,7 +142,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "no-op"
         }
@@ -156,7 +159,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "no-op"
         }
@@ -173,7 +176,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "no-op"
         }
@@ -190,7 +193,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "no-op"
         }
@@ -207,7 +210,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "no-op"
         }
@@ -224,7 +227,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "no-op"
         }
@@ -241,7 +244,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "no-op"
         }
@@ -258,7 +261,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "no-op"
         }
@@ -275,7 +278,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "no-op"
         }
@@ -292,7 +295,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "no-op"
         }
@@ -309,7 +312,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "no-op"
         }
@@ -326,7 +329,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://auth-service:8082"
+            "http://host.docker.internal:8082"
           ],
           "encoding": "no-op"
         }
