@@ -57,9 +57,17 @@
         {
           "url_pattern": "/health",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "json"
+          "encoding": "json",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -74,9 +82,17 @@
         {
           "url_pattern": "/auth/{r1}",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -91,9 +107,17 @@
         {
           "url_pattern": "/auth/{r1}",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -108,9 +132,17 @@
         {
           "url_pattern": "/auth/{r1}",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -125,9 +157,17 @@
         {
           "url_pattern": "/auth/{r1}",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -142,9 +182,17 @@
         {
           "url_pattern": "/auth/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -159,9 +207,17 @@
         {
           "url_pattern": "/auth/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -176,9 +232,17 @@
         {
           "url_pattern": "/auth/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -193,9 +257,17 @@
         {
           "url_pattern": "/auth/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -210,9 +282,17 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -227,9 +307,17 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -244,9 +332,17 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -261,9 +357,17 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -278,9 +382,17 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -295,9 +407,17 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -312,9 +432,17 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -329,9 +457,17 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8082"
+            "http://ecom-auth-service:8082"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -346,9 +482,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8083"
+            "http://ecom-catelog:8083"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -363,9 +507,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8083"
+            "http://ecom-catelog:8083"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -380,9 +532,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8083"
+            "http://ecom-catelog:8083"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -397,9 +557,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8083"
+            "http://ecom-catelog:8083"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -414,9 +582,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8083"
+            "http://ecom-catelog:8083"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -431,9 +607,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8083"
+            "http://ecom-catelog:8083"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -448,9 +632,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8083"
+            "http://ecom-catelog:8083"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -465,9 +657,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8083"
+            "http://ecom-catelog:8083"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -482,9 +682,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8083"
+            "http://ecom-catelog:8083"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -499,9 +707,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8083"
+            "http://ecom-catelog:8083"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -516,9 +732,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8083"
+            "http://ecom-catelog:8083"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -533,9 +757,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8083"
+            "http://ecom-catelog:8083"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -550,9 +782,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8083"
+            "http://ecom-catelog:8083"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -567,9 +807,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8083"
+            "http://ecom-catelog:8083"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -584,9 +832,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8083"
+            "http://ecom-catelog:8083"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -601,9 +857,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8083"
+            "http://ecom-catelog:8083"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -618,9 +882,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8085"
+            "http://ecom-inventory:8085"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -635,9 +907,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8085"
+            "http://ecom-inventory:8085"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -652,9 +932,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8085"
+            "http://ecom-inventory:8085"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -669,9 +957,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8085"
+            "http://ecom-inventory:8085"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -686,9 +982,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8085"
+            "http://ecom-inventory:8085"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -703,9 +1007,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8085"
+            "http://ecom-inventory:8085"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -720,9 +1032,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8085"
+            "http://ecom-inventory:8085"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -737,9 +1057,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8085"
+            "http://ecom-inventory:8085"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -754,9 +1082,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8085"
+            "http://ecom-inventory:8085"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -771,9 +1107,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8085"
+            "http://ecom-inventory:8085"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -788,9 +1132,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8085"
+            "http://ecom-inventory:8085"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -805,9 +1157,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8085"
+            "http://ecom-inventory:8085"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -822,9 +1182,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8085"
+            "http://ecom-inventory:8085"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -839,9 +1207,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8085"
+            "http://ecom-inventory:8085"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -856,9 +1232,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8085"
+            "http://ecom-inventory:8085"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -873,9 +1257,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8085"
+            "http://ecom-inventory:8085"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -890,9 +1282,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8084"
+            "http://ecom-order:8084"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -907,9 +1307,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8084"
+            "http://ecom-order:8084"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -924,9 +1332,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8084"
+            "http://ecom-order:8084"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -941,9 +1357,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8084"
+            "http://ecom-order:8084"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -958,9 +1382,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8084"
+            "http://ecom-order:8084"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -975,9 +1407,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8084"
+            "http://ecom-order:8084"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -992,9 +1432,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8084"
+            "http://ecom-order:8084"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1009,9 +1457,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8084"
+            "http://ecom-order:8084"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1026,9 +1482,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8084"
+            "http://ecom-order:8084"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1043,9 +1507,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8084"
+            "http://ecom-order:8084"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1060,9 +1532,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8084"
+            "http://ecom-order:8084"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1077,9 +1557,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8084"
+            "http://ecom-order:8084"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1094,9 +1582,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8084"
+            "http://ecom-order:8084"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1111,9 +1607,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8084"
+            "http://ecom-order:8084"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1128,9 +1632,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8084"
+            "http://ecom-order:8084"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1145,9 +1657,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8084"
+            "http://ecom-order:8084"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1162,9 +1682,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8086"
+            "http://ecom-analytics:8086"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1179,9 +1707,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8086"
+            "http://ecom-analytics:8086"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1196,9 +1732,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8086"
+            "http://ecom-analytics:8086"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1213,9 +1757,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8086"
+            "http://ecom-analytics:8086"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1230,9 +1782,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8086"
+            "http://ecom-analytics:8086"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1247,9 +1807,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8086"
+            "http://ecom-analytics:8086"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1264,9 +1832,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8086"
+            "http://ecom-analytics:8086"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1281,9 +1857,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8086"
+            "http://ecom-analytics:8086"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1298,9 +1882,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8086"
+            "http://ecom-analytics:8086"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1315,9 +1907,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8086"
+            "http://ecom-analytics:8086"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1332,9 +1932,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8086"
+            "http://ecom-analytics:8086"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1349,9 +1957,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8086"
+            "http://ecom-analytics:8086"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1366,9 +1982,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8086"
+            "http://ecom-analytics:8086"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1383,9 +2007,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8086"
+            "http://ecom-analytics:8086"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1400,9 +2032,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8086"
+            "http://ecom-analytics:8086"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1417,9 +2057,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8086"
+            "http://ecom-analytics:8086"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1434,9 +2082,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8087"
+            "http://ecom-notification:8087"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1451,9 +2107,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8087"
+            "http://ecom-notification:8087"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1468,9 +2132,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8087"
+            "http://ecom-notification:8087"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1485,9 +2157,17 @@
         {
           "url_pattern": "/api/v1/{r1}",
           "host": [
-            "http://host.docker.internal:8087"
+            "http://ecom-notification:8087"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1502,9 +2182,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8087"
+            "http://ecom-notification:8087"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1519,9 +2207,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8087"
+            "http://ecom-notification:8087"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1536,9 +2232,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8087"
+            "http://ecom-notification:8087"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1553,9 +2257,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}",
           "host": [
-            "http://host.docker.internal:8087"
+            "http://ecom-notification:8087"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1570,9 +2282,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8087"
+            "http://ecom-notification:8087"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1587,9 +2307,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8087"
+            "http://ecom-notification:8087"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1604,9 +2332,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8087"
+            "http://ecom-notification:8087"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1621,9 +2357,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
           "host": [
-            "http://host.docker.internal:8087"
+            "http://ecom-notification:8087"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1638,9 +2382,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8087"
+            "http://ecom-notification:8087"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1655,9 +2407,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8087"
+            "http://ecom-notification:8087"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1672,9 +2432,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8087"
+            "http://ecom-notification:8087"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     },
@@ -1689,9 +2457,17 @@
         {
           "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://host.docker.internal:8087"
+            "http://ecom-notification:8087"
           ],
-          "encoding": "no-op"
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
         }
       ]
     }
