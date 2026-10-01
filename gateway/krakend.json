@@ -74,6 +74,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -99,6 +102,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -124,6 +130,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -149,6 +158,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -174,6 +186,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -199,6 +214,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -224,6 +242,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -249,6 +270,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -274,6 +298,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -299,6 +326,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -324,6 +354,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -349,6 +382,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -374,6 +410,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -399,6 +438,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -424,6 +466,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -449,6 +494,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -474,6 +522,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -499,6 +550,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -524,6 +578,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -549,6 +606,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -574,6 +634,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -599,6 +662,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -624,6 +690,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -649,6 +718,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -674,6 +746,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -699,6 +774,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -724,6 +802,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -749,6 +830,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -774,6 +858,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -799,6 +886,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -824,6 +914,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -849,6 +942,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -874,6 +970,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -899,6 +998,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -924,6 +1026,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -949,6 +1054,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -974,6 +1082,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -999,6 +1110,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1024,6 +1138,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1049,6 +1166,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1074,6 +1194,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1099,6 +1222,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1124,6 +1250,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1149,6 +1278,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1174,6 +1306,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1199,6 +1334,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1224,6 +1362,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1249,6 +1390,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1274,6 +1418,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1299,6 +1446,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1324,6 +1474,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1349,6 +1502,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1374,6 +1530,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1399,6 +1558,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1424,6 +1586,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1449,6 +1614,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1474,6 +1642,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1499,6 +1670,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1524,6 +1698,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1549,6 +1726,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1574,6 +1754,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1599,6 +1782,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1624,6 +1810,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1649,6 +1838,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1674,6 +1866,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1699,6 +1894,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1724,6 +1922,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1749,6 +1950,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1774,6 +1978,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1799,6 +2006,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1824,6 +2034,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1849,6 +2062,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1874,6 +2090,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1899,6 +2118,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1924,6 +2146,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1949,6 +2174,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1974,6 +2202,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -1999,6 +2230,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2024,6 +2258,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2049,6 +2286,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2074,6 +2314,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2099,6 +2342,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2124,6 +2370,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2149,6 +2398,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2174,6 +2426,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2199,6 +2454,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2224,6 +2482,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2249,6 +2510,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2274,6 +2538,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2299,6 +2566,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2324,6 +2594,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2349,6 +2622,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2374,6 +2650,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2399,6 +2678,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2424,6 +2706,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2449,6 +2734,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     },
     {
@@ -2474,6 +2762,9 @@
             }
           }
         }
+      ],
+      "input_query_strings": [
+        "*"
       ]
     }
   ]
