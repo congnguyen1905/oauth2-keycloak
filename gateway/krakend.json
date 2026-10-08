@@ -62,7 +62,7 @@
         {
           "url_pattern": "/health",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "json",
           "extra_config": {
@@ -90,7 +90,7 @@
         {
           "url_pattern": "/auth/{r1}",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "no-op",
           "extra_config": {
@@ -118,7 +118,7 @@
         {
           "url_pattern": "/auth/{r1}",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "no-op",
           "extra_config": {
@@ -146,7 +146,7 @@
         {
           "url_pattern": "/auth/{r1}",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "no-op",
           "extra_config": {
@@ -174,7 +174,7 @@
         {
           "url_pattern": "/auth/{r1}",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "no-op",
           "extra_config": {
@@ -202,7 +202,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "no-op",
           "extra_config": {
@@ -230,7 +230,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "no-op",
           "extra_config": {
@@ -258,7 +258,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "no-op",
           "extra_config": {
@@ -286,7 +286,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "no-op",
           "extra_config": {
@@ -314,7 +314,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "no-op",
           "extra_config": {
@@ -342,7 +342,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "no-op",
           "extra_config": {
@@ -370,7 +370,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "no-op",
           "extra_config": {
@@ -398,7 +398,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "no-op",
           "extra_config": {
@@ -426,7 +426,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "no-op",
           "extra_config": {
@@ -454,7 +454,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "no-op",
           "extra_config": {
@@ -482,7 +482,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "no-op",
           "extra_config": {
@@ -510,7 +510,7 @@
         {
           "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
           "host": [
-            "http://ecom-auth-service:8082"
+            "http://ecom-iam-service:8082"
           ],
           "encoding": "no-op",
           "extra_config": {
