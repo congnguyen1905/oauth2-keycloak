@@ -1,0 +1,2771 @@
+{
+  "version": 3,
+  "name": "OAuth2 Demo Gateway",
+  "port": 8888,
+  "host": "0.0.0.0",
+  "timeout": "30s",
+  "cache_ttl": "30s",
+  "output_encoding": "json",
+  "extra_config": {
+    "router": {
+      "return_error_msg": true
+    },
+    "security/cors": {
+      "allow_origins": [
+        "http://localhost:3000",
+        "http://localhost:3031",
+        "http://127.0.0.1:3000",
+        "http://127.0.0.1:3031",
+        "http://192.168.1.5:3000",
+        "http://192.168.1.5:3031",
+        "http://192.168.1.5:8080",
+        "http://192.168.1.5:8888"
+      ],
+      "allow_methods": [
+        "GET",
+        "HEAD",
+        "POST",
+        "PUT",
+        "DELETE",
+        "OPTIONS"
+      ],
+      "allow_headers": [
+        "Origin",
+        "origin",
+        "Authorization",
+        "authorization",
+        "Content-Type",
+        "content-type",
+        "Accept",
+        "accept",
+        "X-Api-Version",
+        "x-api-version",
+        "X-Session-Id",
+        "x-session-id",
+        "X-Tenant-Id",
+        "x-tenant-id",
+        "X-Tenant-ID"
+      ],
+      "expose_headers": [
+        "Content-Length",
+        "Content-Type"
+      ],
+      "allow_credentials": true,
+      "max_age": "12h"
+    }
+  },
+  "endpoints": [
+    {
+      "endpoint": "/health",
+      "method": "GET",
+      "backend": [
+        {
+          "url_pattern": "/health",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "json",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}/{r3}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}/{r3}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}/{r3}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}/{r3}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}/{r3}/{r4}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}/{r3}/{r4}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}/{r3}/{r4}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/auth/{r1}/{r2}/{r3}/{r4}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/auth/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-iam-service:8082"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-catelog:8083"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-catelog:8083"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-catelog:8083"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-catelog:8083"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-catelog:8083"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-catelog:8083"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-catelog:8083"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-catelog:8083"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}/{r3}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-catelog:8083"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}/{r3}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-catelog:8083"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}/{r3}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-catelog:8083"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}/{r3}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-catelog:8083"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}/{r3}/{r4}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-catelog:8083"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}/{r3}/{r4}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-catelog:8083"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}/{r3}/{r4}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-catelog:8083"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/catalog/{r1}/{r2}/{r3}/{r4}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-catelog:8083"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-inventory:8085"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-inventory:8085"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-inventory:8085"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-inventory:8085"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-inventory:8085"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-inventory:8085"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-inventory:8085"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-inventory:8085"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}/{r3}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-inventory:8085"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}/{r3}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-inventory:8085"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}/{r3}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-inventory:8085"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}/{r3}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-inventory:8085"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}/{r3}/{r4}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-inventory:8085"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}/{r3}/{r4}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-inventory:8085"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}/{r3}/{r4}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-inventory:8085"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/inventory/{r1}/{r2}/{r3}/{r4}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-inventory:8085"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-order:8084"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-order:8084"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-order:8084"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-order:8084"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-order:8084"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-order:8084"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-order:8084"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-order:8084"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}/{r3}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-order:8084"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}/{r3}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-order:8084"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}/{r3}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-order:8084"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}/{r3}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-order:8084"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}/{r3}/{r4}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-order:8084"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}/{r3}/{r4}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-order:8084"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}/{r3}/{r4}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-order:8084"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/order/{r1}/{r2}/{r3}/{r4}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-order:8084"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-analytics:8086"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-analytics:8086"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-analytics:8086"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-analytics:8086"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-analytics:8086"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-analytics:8086"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-analytics:8086"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-analytics:8086"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}/{r3}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-analytics:8086"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}/{r3}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-analytics:8086"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}/{r3}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-analytics:8086"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}/{r3}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-analytics:8086"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}/{r3}/{r4}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-analytics:8086"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}/{r3}/{r4}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-analytics:8086"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}/{r3}/{r4}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-analytics:8086"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/analytics/{r1}/{r2}/{r3}/{r4}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-analytics:8086"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-notification:8087"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-notification:8087"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-notification:8087"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}",
+          "host": [
+            "http://ecom-notification:8087"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-notification:8087"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-notification:8087"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-notification:8087"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}",
+          "host": [
+            "http://ecom-notification:8087"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}/{r3}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-notification:8087"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}/{r3}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-notification:8087"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}/{r3}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-notification:8087"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}/{r3}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}",
+          "host": [
+            "http://ecom-notification:8087"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}/{r3}/{r4}",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-notification:8087"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}/{r3}/{r4}",
+      "method": "POST",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-notification:8087"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}/{r3}/{r4}",
+      "method": "PUT",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-notification:8087"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    },
+    {
+      "endpoint": "/api/notification/{r1}/{r2}/{r3}/{r4}",
+      "method": "DELETE",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "*"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/api/v1/{r1}/{r2}/{r3}/{r4}",
+          "host": [
+            "http://ecom-notification:8087"
+          ],
+          "encoding": "no-op",
+          "extra_config": {
+            "qos/circuit-breaker": {
+              "interval": 60,
+              "timeout": 10,
+              "max_errors": 5,
+              "log_status_change": true
+            }
+          }
+        }
+      ],
+      "input_query_strings": [
+        "*"
+      ]
+    }
+  ]
+}

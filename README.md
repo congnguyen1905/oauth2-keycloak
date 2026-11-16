@@ -1,62 +1,80 @@
-# OAuth2 Demo: Keycloak + Spring Boot
+# OAuth2 Demo: Keycloak + Auth Service (Golang) + Next.js + KrakenD Gateway
 
-Project mẫu OAuth2 đầy đủ với:
-- **Keycloak 22** làm Authorization Server (chạy qua Docker)
-- **Spring Boot 2.7.18 / Java 8** vừa là **OAuth2 Client** (browser login) vừa là **Resource Server** (JWT API)
+Hệ thống OAuth2 hiện đại với kiến trúc microservices:
+- **Keycloak 22** làm Authorization Server
+- **Auth Service (Golang)** xác thực JWT cục bộ, quản lý session (Redis/DB)
+- **Next.js (TypeScript)** Frontend chỉ lưu sessionId
+- **KrakenD** API Gateway
+- **Spring Boot 2.7.18 / Java 8** Backend Resource Server
 
 ---
 
-## 🏗️ Kiến trúc
+## 🏗️ Kiến trúc hệ thống
 
 ```
-Browser
-  │
-  ▼ (1) Redirect /oauth2/authorization/keycloak
-Keycloak :8080  ──── Authorization Code Flow ────▶ Spring Boot :8081
-  │                                                        │
-  │  (2) Issue access_token (JWT)                   ├─ OAuth2 Client
-  │                                                  │   (browser session)
-  │                                                  └─ Resource Server
-  │                                                      (JWT validation)
-  ▼
-REST API caller ──── Bearer <JWT> ──────────────────▶ /api/**
+┌─────────────┐      ┌──────────────┐      ┌─────────────┐
+│   Next.js   │      │   KrakenD    │      │Auth Service │
+│  Frontend   │─────▶│   Gateway    │─────▶│   (Golang)  │
+│ (sessionId) │      │   (:8888)    │      │  (JWT decode)│
+└─────────────┘      └──────────────┘      └─────────────┘
+                            │                     │
+                            │                     ▼
+                            │              ┌─────────────┐
+                            │              │    Redis    │
+                            │              │  + Database │
+                            │              └─────────────┘
+                            ▼
+                     ┌─────────────┐
+                     │ Spring Boot │
+                     │   Backend   │
+                     │   (:8081)   │
+                     └─────────────┘
+                            │
+                            ▼
+                     ┌─────────────┐
+                     │  Keycloak   │
+                     │   (:8080)   │
+                     └─────────────┘
 ```
+
+### Luồng xác thực:
+1. User login tại Next.js → gửi credentials đến Auth Service
+2. Auth Service xác thực với Keycloak → tạo sessionId → lưu vào Redis/DB
+3. Auth Service trả về sessionId cho Next.js (lưu trong localStorage)
+4. Next.js gửi sessionId trong header `X-Session-ID` đến KrakenD
+5. KrakenD route request đến Spring Boot hoặc Auth Service
+6. Spring Boot gọi Auth Service để validate sessionId → lấy thông tin user
 
 ---
 
 ## 🚀 Khởi động nhanh
 
-### Bước 1: Chạy Keycloak
+### Bước 1: Chạy toàn bộ hệ thống với Docker Compose
 
 ```bash
-docker-compose up -d
+docker-compose up --build
 ```
 
-Chờ Keycloak khởi động (~30-60s), kiểm tra:
+Hệ thống sẽ khởi động:
+- **Keycloak**: http://localhost:8080
+- **KrakenD Gateway**: http://localhost:8888
+- **Auth Service**: http://localhost:8082
+- **Spring Boot Backend**: http://localhost:8081
+- **Next.js Frontend**: http://localhost:3000
+- **Redis**: localhost:6379
+
+Chờ khoảng 60s để tất cả services sẵn sàng.
+
+### Bước 2: Truy cập ứng dụng
+
+Mở trình duyệt:
 ```
-http://localhost:8080/realms/demo-realm
-```
-→ Phải trả về JSON. Nếu chưa thấy thì đợi thêm.
-
-**Keycloak Admin Console:** http://localhost:8080 (admin/admin)
-
-### Bước 2: Chạy Spring Boot
-
-```bash
-cd spring-app
-mvn spring-boot:run
-```
-
-Hoặc build jar:
-```bash
-mvn clean package -DskipTests
-java -jar target/oauth2-demo-0.0.1-SNAPSHOT.jar
+http://localhost:3000
 ```
 
-### Bước 3: Mở ứng dụng
-
+Hoặc test API qua Gateway:
 ```
-http://localhost:8081
+http://localhost:8888/api/app/public/hello
 ```
 
 ---
@@ -72,57 +90,92 @@ http://localhost:8081
 
 ## 🔗 Các URL quan trọng
 
-| URL | Mô tả |
-|-----|-------|
-| `http://localhost:8081/` | Trang chủ |
-| `http://localhost:8081/dashboard` | Dashboard (cần login) |
-| `http://localhost:8081/admin` | Admin page (cần ROLE_ADMIN) |
-| `http://localhost:8080` | Keycloak Admin Console |
-| `http://localhost:8080/realms/demo-realm/.well-known/openid-configuration` | OIDC Discovery |
+| Service | URL | Mô tả |
+|---------|-----|-------|
+| **Frontend** | `http://localhost:3000` | Next.js App |
+| **Gateway** | `http://localhost:8888` | KrakenD API Gateway |
+| **Keycloak** | `http://localhost:8080` | Keycloak Admin Console |
+| **Auth Service** | `http://localhost:8082` | Golang Auth Service |
+| **Spring Boot** | `http://localhost:8081` | Backend Resource Server |
+| **OIDC Discovery** | `http://localhost:8080/realms/demo-realm/.well-known/openid-configuration` | OIDC Config |
 
 ---
 
-## 🛡️ API Endpoints (Resource Server)
+## 🛡️ API Endpoints
 
-Gọi với header: `Authorization: Bearer <access_token>`
+### Qua Gateway (http://localhost:8888)
+
+#### Auth Service Routes (`/api/auth/*`)
+| Method | Path | Mô tả |
+|--------|------|-------|
+| POST | `/api/auth/login` | Đăng nhập, nhận sessionId |
+| POST | `/api/auth/logout` | Đăng xuất, hủy session |
+| GET | `/api/auth/validate` | Validate sessionId |
+| GET | `/api/auth/introspect` | Lấy thông tin user từ token |
+
+#### Spring Boot Routes (`/api/app/*`)
+Gọi với header: `X-Session-ID: <sessionId>`
 
 | Method | Path | Quyền |
 |--------|------|-------|
-| GET | `/api/public/hello` | Public, không cần auth |
-| GET | `/api/user/profile` | Cần JWT hợp lệ |
-| GET | `/api/user/data` | `ROLE_USER` |
-| GET | `/api/token/info` | Cần JWT hợp lệ |
-| GET | `/api/admin/stats` | `ROLE_ADMIN` |
+| GET | `/api/app/public/hello` | Public |
+| GET | `/api/app/user/profile` | Cần sessionId hợp lệ |
+| GET | `/api/app/user/data` | `ROLE_USER` |
+| GET | `/api/app/token/info` | Cần sessionId hợp lệ |
+| GET | `/api/app/admin/stats` | `ROLE_ADMIN` |
 
-### Lấy access token qua curl (Direct Grant)
+---
+
+## 📋 Test API với curl
+
+### 1. Đăng nhập và lấy sessionId
 
 ```bash
-curl -s -X POST http://localhost:8080/realms/demo-realm/protocol/openid-connect/token \
-  -d "client_id=spring-boot-app" \
-  -d "client_secret=spring-boot-secret-key-2024" \
-  -d "username=user" \
-  -d "password=user123" \
-  -d "grant_type=password" | jq .access_token -r
+curl -X POST http://localhost:8888/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{
+    "username": "user",
+    "password": "user123"
+  }'
 ```
 
-### Gọi API với token
+Response:
+```json
+{
+  "session_id": "abc123xyz...",
+  "expires_at": "2024-01-01T12:00:00Z"
+}
+```
+
+### 2. Gọi API với sessionId
 
 ```bash
-TOKEN=$(curl -s -X POST http://localhost:8080/realms/demo-realm/protocol/openid-connect/token \
-  -d "client_id=spring-boot-app" \
-  -d "client_secret=spring-boot-secret-key-2024" \
-  -d "username=admin" \
-  -d "password=admin123" \
-  -d "grant_type=password" | jq .access_token -r)
+SESSION_ID="abc123xyz..."
 
 # Public API
-curl http://localhost:8081/api/public/hello
+curl http://localhost:8888/api/app/public/hello
 
 # Protected API
-curl -H "Authorization: Bearer $TOKEN" http://localhost:8081/api/user/profile
+curl -H "X-Session-ID: $SESSION_ID" \
+  http://localhost:8888/api/app/user/profile
 
 # Admin API (cần user admin)
-curl -H "Authorization: Bearer $TOKEN" http://localhost:8081/api/admin/stats
+curl -H "X-Session-ID: $SESSION_ID" \
+  http://localhost:8888/api/app/admin/stats
+```
+
+### 3. Validate sessionId
+
+```bash
+curl -H "X-Session-ID: $SESSION_ID" \
+  http://localhost:8888/api/auth/validate
+```
+
+### 4. Logout
+
+```bash
+curl -X POST -H "X-Session-ID: $SESSION_ID" \
+  http://localhost:8888/api/auth/logout
 ```
 
 ---
@@ -131,63 +184,115 @@ curl -H "Authorization: Bearer $TOKEN" http://localhost:8081/api/admin/stats
 
 ```
 oauth2-keycloak/
-├── docker-compose.yml              ← Keycloak container
-├── keycloak-config/
-│   └── realm-export.json           ← Realm config tự động import
-└── spring-app/
-    ├── pom.xml                     ← Spring Boot 2.7.18, Java 8
-    └── src/main/
-        ├── java/com/example/oauth2demo/
-        │   ├── OAuth2DemoApplication.java
-        │   ├── config/
-        │   │   ├── SecurityConfig.java         ← Dual chain: Client + Resource Server
-        │   │   └── KeycloakLogoutHandler.java  ← SSO logout
-        │   └── controller/
-        │       ├── WebController.java          ← Browser pages
-        │       └── ApiController.java          ← REST API
-        └── resources/
-            ├── application.yml     ← OAuth2 config
-            └── templates/          ← Thymeleaf pages
+├── docker-compose.yml              ← Orchestration toàn bộ hệ thống
+├── gateway/
+│   └── krakend.json                ← KrakenD Gateway config
+├── auth-service/
+│   ├── main.go                     ← Entry point
+│   ├── go.mod                      ← Go dependencies
+│   ├── config/                     ← Configuration module
+│   │   └── config.go
+│   ├── pkg/
+│   │   ├── models/                 ← Data models
+│   │   │   └── models.go
+│   │   ├── jwt/                    ← JWT decoding (không gọi Keycloak)
+│   │   │   └── jwt.go
+│   │   ├── storage/                ← Storage interface (Redis/DB)
+│   │   │   ├── storage.go
+│   │   │   ├── redis.go
+│   │   │   └── database.go
+│   │   ├── service/                ← Business logic
+│   │   │   └── auth_service.go
+│   │   └── handler/                ← HTTP handlers
+│   │       └── handler.go
+│   └── Dockerfile
+├── frontend/
+│   ├── package.json                ← Next.js dependencies
+│   ├── pages/
+│   │   ├── index.tsx               ← Login page
+│   │   └── dashboard.tsx           ← Dashboard page
+│   ├── styles/
+│   └── Dockerfile
+├── spring-app/
+│   ├── pom.xml                     ← Spring Boot 2.7.18, Java 8
+│   └── src/main/
+│       ├── java/com/example/oauth2demo/
+│       │   ├── OAuth2DemoApplication.java
+│       │   ├── config/
+│       │   │   ├── SecurityConfig.java
+│       │   │   └── SessionAuthenticationFilter.java  ← Validate X-Session-ID
+│       │   ├── client/
+│       │   │   └── AuthServiceClient.java            ← Call Auth Service
+│       │   └── controller/
+│       │       ├── WebController.java
+│       │       └── ApiController.java
+│       └── resources/
+│           ├── application.yml
+│           └── templates/
+└── keycloak-config/
+    └── realm-export.json           ← Realm config
 ```
 
 ---
 
-## ⚙️ Giải thích SecurityConfig (quan trọng)
+## ⚙️ Auth Service Architecture
 
-Spring Boot app có **2 Security Filter Chain**:
+### Thiết kế Module
+Auth Service được chia thành các module độc lập, dễ mở rộng:
 
-### Chain 1 (`@Order(1)`) - Resource Server
-```
-/api/** → Xác thực bằng JWT Bearer token → STATELESS
-```
-- Không có session, không redirect login
-- Đọc JWT từ header `Authorization: Bearer ...`
-- Convert roles từ claim `roles` trong JWT
+1. **config/**: Quản lý cấu hình (environment variables, YAML)
+2. **pkg/models/**: Định nghĩa data structures
+3. **pkg/jwt/**: Giải mã JWT cục bộ (sử dụng public key của Keycloak)
+   - Không cần gọi lại Keycloak để verify
+   - Hỗ trợ RS256 signing algorithm
+4. **pkg/storage/**: Interface lưu trữ linh hoạt
+   - `storage.go`: Interface chung
+   - `redis.go`: Implement với Redis
+   - `database.go`: Implement với Database (PostgreSQL/MySQL)
+5. **pkg/service/**: Business logic layer
+6. **pkg/handler/**: HTTP handlers (có thể thêm gRPC/HTTP3 sau)
 
-### Chain 2 (`@Order(2)`) - OAuth2 Client
-```
-/** → Redirect sang Keycloak login → SESSION-based
-```
-- Dùng Authorization Code Flow
-- Sau login, lưu session trên server
-- Thymeleaf pages đọc `OidcUser` từ security context
+### Mở rộng trong tương lai
+- **gRPC**: Thêm `pkg/grpc/` với proto definitions
+- **HTTP/3**: Thêm QUIC support trong server setup
+- **Database**: Đã có interface, chỉ cần implement thêm driver
 
 ---
 
 ## 🔧 Tùy chỉnh
 
-### Đổi client secret
-Sửa trong `keycloak-config/realm-export.json` và `application.yml` cùng lúc.
+### Đổi cấu hình Auth Service
+Sửa `auth-service/config/config.go` hoặc dùng environment variables:
+```bash
+AUTH_SERVICE_PORT=8082
+KEYCLK_URL=http://keycloak:8080
+REALM_NAME=demo-realm
+CLIENT_ID=spring-boot-app
+CLIENT_SECRET=spring-boot-secret-key-2024
+REDIS_HOST=redis
+REDIS_PORT=6379
+```
 
-### Thêm user/role
+### Đổi Database storage
+Implement interface trong `auth-service/pkg/storage/database.go`:
+```go
+type Storage interface {
+    Save(sessionID string, token string, expiresAt time.Time) error
+    Get(sessionID string) (string, error)
+    Delete(sessionID string) error
+}
+```
+
+### Thêm user/role trong Keycloak
 Đăng nhập Keycloak Admin → Realm `demo-realm` → Users/Roles.
 
-### Thêm scope
-Trong `application.yml`:
-```yaml
-scope:
-  - openid
-  - profile
-  - email
-  - phone   # thêm scope mới
-```
+---
+
+## 🎯 Lợi ích kiến trúc mới
+
+1. **Frontend nhẹ**: Chỉ lưu sessionId, không quản lý token phức tạp
+2. **Backend stateless**: Spring Boot không cần biết về Keycloak
+3. **Centralized Auth**: Auth Service đảm nhiệm mọi việc xác thực
+4. **JWT local verification**: Auth Service giải mã JWT không cần gọi Keycloak
+5. **Scalable**: Dễ dàng thêm gRPC, HTTP/3, đổi storage backend
+6. **Gateway pattern**: KrakenD quản lý routing, rate limiting, authentication
